@@ -63,3 +63,14 @@
 }
 
 /** BUTTON DESIGN **/
+
+#EASDiv {
+  background: white;
+  border: solid black 1px;
+  width: 700px;
+  height: 700px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+}
