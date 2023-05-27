@@ -1,20 +1,41 @@
 const container = document.getElementById('container');
 const selectSizeButton = document.getElementById('selectSize');
+let isDrawing = false;
+
 
 function createEtchASketch(size) {
-  // Clear the container
   container.innerHTML = '';
 
-  // Set CSS custom property for size
   container.style.setProperty('--size', size);
 
-  // Create the cells
+
   for (let i = 0; i < size * size; i++) {
     const cell = document.createElement('div');
     cell.classList.add('cell');
     container.appendChild(cell);
+    cell.addEventListener('click', function() {
+        cell.style.backgroundColor = 'black';
+      });
+      cell.addEventListener('mousedown', function() {
+        isDrawing = true;
+        cell.style.backgroundColor = 'black';
+      });
+      cell.addEventListener('mouseover', function() {
+        if (isDrawing) {
+          cell.style.backgroundColor = 'black';
+        }
+      });
   }
+
 }
+
+container.addEventListener('mousedown', function() {
+    isDrawing = true;
+  });
+  
+  container.addEventListener('mouseup', function() {
+    isDrawing = false;
+  });
 
 selectSizeButton.addEventListener('click', function() {
   let size = prompt('Please type a value between 1 and 100');
