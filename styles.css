@@ -63,14 +63,19 @@
 }
 
 /** BUTTON DESIGN **/
-
 #container {
+  display: grid;
+  grid-template-columns: repeat(var(--size), 1fr);
+  grid-template-rows: repeat(var(--size), 1fr);
   background: white;
   border: solid black 1px;
   width: 700px;
   height: 700px;
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: auto;
+  margin: 50px auto;
+  padding: 0;
+}
+
+.cell {
+  box-sizing: border-box;
+  border: 1px solid black;
 }
